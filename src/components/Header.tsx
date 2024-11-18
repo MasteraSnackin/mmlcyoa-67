@@ -1,16 +1,13 @@
 import { Button } from "./ui/button";
 import { Volume2, VolumeX } from "lucide-react";
-import VoiceSettings from "./VoiceSettings";
 import { useTranslation } from 'react-i18next';
 
 interface HeaderProps {
   isSpeaking: boolean;
   toggleSpeech: () => void;
-  onVoiceChange: (voice: SpeechSynthesisVoice) => void;
-  currentVoice: SpeechSynthesisVoice | null;
 }
 
-export const Header = ({ isSpeaking, toggleSpeech, onVoiceChange, currentVoice }: HeaderProps) => {
+export const Header = ({ isSpeaking, toggleSpeech }: HeaderProps) => {
   const { t } = useTranslation();
   
   return (
@@ -20,9 +17,6 @@ export const Header = ({ isSpeaking, toggleSpeech, onVoiceChange, currentVoice }
           {t('Interactive Adventure Quest')}
         </h1>
         <div className="flex items-center gap-4">
-          {isSpeaking && (
-            <VoiceSettings onVoiceChange={onVoiceChange} currentVoice={currentVoice} />
-          )}
           <Button
             onClick={toggleSpeech}
             variant="ghost"
