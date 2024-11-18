@@ -12,16 +12,28 @@ import { Button } from "@/components/ui/button";
 import { Copy, RefreshCw, Download, Moon, Sun } from "lucide-react";
 import { useTranslation } from 'react-i18next';
 import { LanguageSelector } from "@/components/LanguageSelector";
+import VoiceSettings from "@/components/VoiceSettings";
 import '../i18n/config';
 
 const Index = () => {
   const { toast } = useToast();
-  const { speak, stopSpeaking, setVoice, currentVoice } = useSpeech();
+  const { 
+    speak, 
+    stopSpeaking, 
+    setVoice, 
+    currentVoice,
+    speed,
+    setSpeed,
+    pitch,
+    setPitch,
+    volume,
+    setVolume 
+  } = useSpeech();
   const { messages, setMessages, isTyping, setIsTyping } = useGameState();
   const [isSpeaking, setIsSpeaking] = useState(true);
   const [isDarkMode, setIsDarkMode] = useState(false);
   const { t } = useTranslation();
-  
+
   useEffect(() => {
     if (isDarkMode) {
       document.documentElement.classList.add('dark');
@@ -106,16 +118,12 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 flex flex-col">
-      <div className="bg-white dark:bg-gray-800 shadow-sm border-b dark:border-gray-700">
-        <div className="container mx-auto px-4 py-2">
-          <Header
-            isSpeaking={isSpeaking}
-            toggleSpeech={toggleSpeech}
-            onVoiceChange={setVoice}
-            currentVoice={currentVoice}
-          />
-        </div>
-      </div>
+      <Header
+        isSpeaking={isSpeaking}
+        toggleSpeech={toggleSpeech}
+        onVoiceChange={setVoice}
+        currentVoice={currentVoice}
+      />
       
       <main className="flex-1 container mx-auto px-4 py-6 flex gap-6">
         <div className="flex-1 bg-white dark:bg-gray-800 rounded-lg shadow-lg flex flex-col">
@@ -177,8 +185,23 @@ const Index = () => {
           </div>
         </div>
         
-        <div className="w-[512px] bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 overflow-y-auto">
-          {lastBotMessage && <SceneImage message={lastBotMessage} />}
+        <div className="w-[512px] flex flex-col gap-6">
+          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
+            {lastBotMessage && <SceneImage message={lastBotMessage} />}
+          </div>
+          
+          {isSpeaking && (
+            <VoiceSettings
+              onVoiceChange={setVoice}
+              currentVoice={currentVoice}
+              onSpeedChange={setSpeed}
+              onPitchChange={setPitch}
+              onVolumeChange={setVolume}
+              speed={speed}
+              pitch={pitch}
+              volume={volume}
+            />
+          )}
         </div>
       </main>
     </div>

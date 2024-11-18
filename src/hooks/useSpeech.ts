@@ -2,24 +2,32 @@ import { useState } from "react";
 
 export const useSpeech = () => {
   const [currentVoice, setCurrentVoice] = useState<SpeechSynthesisVoice>();
+  const [speed, setSpeed] = useState(1);
+  const [pitch, setPitch] = useState(1);
+  const [volume, setVolume] = useState(1);
 
   const speak = (text: string) => {
     if ('speechSynthesis' in window) {
-      // Cancel any ongoing speech
       window.speechSynthesis.cancel();
 
       const utterance = new SpeechSynthesisUtterance(text);
       
-      // Set voice if one is selected
       if (currentVoice) {
         utterance.voice = currentVoice;
       }
       
-      utterance.rate = 1;
-      utterance.pitch = 1;
-      utterance.volume = 1;
+      utterance.rate = speed;
+      utterance.pitch = pitch;
+      utterance.volume = volume;
 
-      console.log("Starting text-to-speech for:", text, "with voice:", currentVoice?.name);
+      console.log("Starting text-to-speech:", {
+        text,
+        voice: currentVoice?.name,
+        speed,
+        pitch,
+        volume
+      });
+      
       window.speechSynthesis.speak(utterance);
     } else {
       console.error("Text-to-speech not supported in this browser");
@@ -38,5 +46,16 @@ export const useSpeech = () => {
     setCurrentVoice(voice);
   };
 
-  return { speak, stopSpeaking, setVoice, currentVoice };
+  return { 
+    speak, 
+    stopSpeaking, 
+    setVoice, 
+    currentVoice,
+    speed,
+    setSpeed,
+    pitch,
+    setPitch,
+    volume,
+    setVolume
+  };
 };
