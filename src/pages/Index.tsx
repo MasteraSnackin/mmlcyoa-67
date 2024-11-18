@@ -73,8 +73,8 @@ const Index = () => {
         toggleSpeech={toggleSpeech}
       />
       
-      <main className="flex-1 container mx-auto px-4 py-6 flex gap-6">
-        <div className="flex-1 bg-white dark:bg-gray-800 rounded-lg shadow-lg flex flex-col">
+      <main className="flex-1 container mx-auto p-4 flex flex-col lg:flex-row gap-4">
+        <div className="flex-1 bg-white dark:bg-gray-800 rounded-lg shadow-lg flex flex-col order-2 lg:order-1">
           <div className="flex-1 overflow-hidden">
             <ChatContainer messages={messages} isTyping={isTyping} />
           </div>
@@ -90,8 +90,8 @@ const Index = () => {
           />
         </div>
         
-        <div className="w-[512px] flex flex-col gap-6">
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
+        <div className="w-full lg:w-[512px] flex flex-col gap-4 order-1 lg:order-2">
+          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4">
             {lastBotMessage && <SceneImage message={lastBotMessage} />}
           </div>
           
@@ -107,15 +107,17 @@ const Index = () => {
               volume={volume}
             />
           )}
-        </div>
 
-        <GameActions
-          isDarkMode={isDarkMode}
-          setIsDarkMode={setIsDarkMode}
-          messages={messages}
-          setMessages={setMessages}
-          toast={toast}
-        />
+          <div className="fixed bottom-4 right-4 z-50 lg:relative lg:bottom-0 lg:right-0">
+            <GameActions
+              isDarkMode={isDarkMode}
+              setIsDarkMode={setIsDarkMode}
+              messages={messages}
+              setMessages={setMessages}
+              toast={toast}
+            />
+          </div>
+        </div>
       </main>
     </div>
   );

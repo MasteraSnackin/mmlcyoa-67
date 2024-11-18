@@ -2,14 +2,14 @@ import { Button } from "./ui/button";
 import { Copy, RefreshCw, Download, Moon, Sun } from "lucide-react";
 import { LanguageSelector } from "./LanguageSelector";
 import { useTranslation } from 'react-i18next';
-import { Toast } from "@/components/ui/use-toast";
+import { toast } from "@/components/ui/use-toast";
 
 interface GameActionsProps {
   isDarkMode: boolean;
   setIsDarkMode: (value: boolean) => void;
   messages: Array<{ text: string; isBot: boolean }>;
   setMessages: (messages: Array<{ text: string; isBot: boolean }>) => void;
-  toast: (props: Toast) => void;
+  toast: typeof toast;
 }
 
 export const GameActions = ({
@@ -70,44 +70,46 @@ export const GameActions = ({
   };
 
   return (
-    <div className="flex flex-col gap-2">
+    <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 flex flex-row lg:flex-col gap-2">
       <Button
         variant="outline"
         size="sm"
-        className="flex items-center gap-2 shrink-0"
+        className="flex-1 lg:flex-none flex items-center justify-center gap-2"
         onClick={copyChatlogs}
       >
         <Copy className="w-4 h-4" />
-        {t('Copy Chat Logs')}
+        <span className="hidden lg:inline">{t('Copy Chat Logs')}</span>
       </Button>
       <Button
         variant="outline"
         size="sm"
-        className="flex items-center gap-2 shrink-0"
+        className="flex-1 lg:flex-none flex items-center justify-center gap-2"
         onClick={exportChat}
       >
         <Download className="w-4 h-4" />
-        {t('Export Chat')}
+        <span className="hidden lg:inline">{t('Export Chat')}</span>
       </Button>
       <Button
         variant="outline"
         size="sm"
-        className="flex items-center gap-2 shrink-0"
+        className="flex-1 lg:flex-none flex items-center justify-center gap-2"
         onClick={restartChat}
       >
         <RefreshCw className="w-4 h-4" />
-        {t('Restart Chat')}
+        <span className="hidden lg:inline">{t('Restart Chat')}</span>
       </Button>
       <Button
         variant="outline"
         size="sm"
-        className="flex items-center gap-2 shrink-0"
+        className="flex-1 lg:flex-none flex items-center justify-center gap-2"
         onClick={() => setIsDarkMode(!isDarkMode)}
       >
         {isDarkMode ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
-        {t('Dark Mode')}
+        <span className="hidden lg:inline">{t('Dark Mode')}</span>
       </Button>
-      <LanguageSelector />
+      <div className="flex-1 lg:flex-none">
+        <LanguageSelector />
+      </div>
     </div>
   );
 };
