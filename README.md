@@ -23,11 +23,11 @@ The only requirement is having Node.js & npm installed - [install with nvm](http
 Follow these steps:
 
 ```sh
-# Step 1: Clone the repository
-git clone https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
+# Step 1: Clone this repository
+git clone [Your repository URL will be provided after project creation]
 
 # Step 2: Navigate to the project directory
-cd YOUR_REPOSITORY
+cd [Your project directory name]
 
 # Step 3: Install the necessary dependencies
 npm install
