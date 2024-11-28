@@ -24,10 +24,10 @@ Follow these steps:
 
 ```sh
 # Step 1: Clone this repository
-git clone [Your repository URL will be provided after project creation]
+git clone git@github.com:lovable-ai/mythic-mind-labs.git
 
 # Step 2: Navigate to the project directory
-cd [Your project directory name]
+cd mythic-mind-labs
 
 # Step 3: Install the necessary dependencies
 npm install
