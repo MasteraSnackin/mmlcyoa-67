@@ -8,8 +8,17 @@ interface SceneImageProps {
 export const SceneImage = ({ message }: SceneImageProps) => {
   const { isLoading, imageUrl, generateImage } = useDallE();
 
+  const extractNarrative = (text: string): string => {
+    // Split by numbered options (1., 2., etc)
+    const parts = text.split(/\d+\./);
+    // Return the first part (narrative before options)
+    return parts[0].trim();
+  };
+
   const handleGenerate = () => {
-    generateImage(message);
+    const narrativeText = extractNarrative(message);
+    console.log("Generating image for narrative:", narrativeText);
+    generateImage(narrativeText);
   };
 
   return (
