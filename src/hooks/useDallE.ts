@@ -3,7 +3,7 @@ import { useToast } from "@/components/ui/use-toast";
 import OpenAI from "openai";
 
 const openai = new OpenAI({
-  apiKey: import.meta.env.VITE_GROQ_API_KEY,
+  apiKey: import.meta.env.VITE_NEBIUS_API_KEY,
   dangerouslyAllowBrowser: true
 });
 
