@@ -26,7 +26,8 @@ const resources = {
       'Choose Action': 'Choose Action',
       'Start Recording': 'Start Recording',
       'Stop Recording': 'Stop Recording',
-      'Type a message...': 'Type a message...'
+      'Type a message...': 'Type a message...',
+      'Mythic Mind Labs': 'Mythic Mind Labs',
     },
   },
   es: {
@@ -53,7 +54,8 @@ const resources = {
       'Choose Action': 'Elegir Acción',
       'Start Recording': 'Comenzar Grabación',
       'Stop Recording': 'Detener Grabación',
-      'Type a message...': 'Escribe un mensaje...'
+      'Type a message...': 'Escribe un mensaje...',
+      'Mythic Mind Labs': 'Mythic Mind Labs',
     },
   },
   fr: {
@@ -80,7 +82,8 @@ const resources = {
       'Choose Action': 'Choisir une Action',
       'Start Recording': "Commencer l'Enregistrement",
       'Stop Recording': "Arrêter l'Enregistrement",
-      'Type a message...': 'Écrivez un message...'
+      'Type a message...': 'Écrivez un message...',
+      'Mythic Mind Labs': 'Mythic Mind Labs',
     },
   },
   de: {
@@ -107,7 +110,8 @@ const resources = {
       'Choose Action': 'Aktion wählen',
       'Start Recording': 'Aufnahme starten',
       'Stop Recording': 'Aufnahme stoppen',
-      'Type a message...': 'Nachricht eingeben...'
+      'Type a message...': 'Nachricht eingeben...',
+      'Mythic Mind Labs': 'Mythic Mind Labs',
     },
   },
   it: {
@@ -134,7 +138,8 @@ const resources = {
       'Choose Action': 'Scegli Azione',
       'Start Recording': 'Avvia Registrazione',
       'Stop Recording': 'Ferma Registrazione',
-      'Type a message...': 'Scrivi un messaggio...'
+      'Type a message...': 'Scrivi un messaggio...',
+      'Mythic Mind Labs': 'Mythic Mind Labs',
     },
   },
   zh: {
@@ -161,7 +166,8 @@ const resources = {
       'Choose Action': '选择动作',
       'Start Recording': '开始录音',
       'Stop Recording': '停止录音',
-      'Type a message...': '输入消息...'
+      'Type a message...': '输入消息...',
+      'Mythic Mind Labs': 'Mythic Mind Labs',
     },
   },
   fi: {
@@ -188,7 +194,8 @@ const resources = {
       'Choose Action': 'Valitse toiminto',
       'Start Recording': 'Aloita äänitys',
       'Stop Recording': 'Lopeta äänitys',
-      'Type a message...': 'Kirjoita viesti...'
+      'Type a message...': 'Kirjoita viesti...',
+      'Mythic Mind Labs': 'Mythic Mind Labs',
     },
   },
   sv: {
@@ -215,7 +222,8 @@ const resources = {
       'Choose Action': 'Välj handling',
       'Start Recording': 'Börja spela in',
       'Stop Recording': 'Sluta spela in',
-      'Type a message...': 'Skriv ett meddelande...'
+      'Type a message...': 'Skriv ett meddelande...',
+      'Mythic Mind Labs': 'Mythic Mind Labs',
     },
   },
 };
