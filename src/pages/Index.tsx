@@ -11,6 +11,7 @@ import { useMessageHandler } from "@/hooks/useMessageHandler";
 import { GameActions } from "@/components/GameActions";
 import { VoiceSettingsPanel } from "@/components/VoiceSettingsPanel";
 import { useTranslation } from 'react-i18next';
+import { Footer } from "@/components/Footer";
 import '../i18n/config';
 
 const Index = () => {
@@ -119,6 +120,8 @@ const Index = () => {
           </div>
         </div>
       </main>
+
+      <Footer />
     </div>
   );
 };
