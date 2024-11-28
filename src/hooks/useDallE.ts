@@ -3,7 +3,7 @@ import { useToast } from "@/components/ui/use-toast";
 import OpenAI from "openai";
 
 const openai = new OpenAI({
-  apiKey: import.meta.env.VITE_NEBIUS_API_KEY,
+  apiKey: "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",
   dangerouslyAllowBrowser: true
 });
 
